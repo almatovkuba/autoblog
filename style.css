@@ -1,0 +1,546 @@
+/* ===============CSS Reset===============
+========================================== */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-spacing: 0;
+}
+/*============================================
+==============================================*/
+@font-face {
+	font-family: Roboto;
+	src: url('../fonts/Roboto-Regular.woff') format('woff'),
+		 url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: Roboto;
+	src: url('../fonts/Roboto-Light.woff') format('woff'),
+		 url('../fonts/Roboto-Light.ttf') format('truetype');
+	font-weight: 300;
+}
+@font-face {
+	font-family: Proxima;
+	src: url('../fonts/ProximaNova-Regular.woff') format('woff'),
+		 url('../fonts/ProximaNova-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: Proxima;
+	src: url('../fonts/ProximaNova-Bold.woff') format('woff'),
+		 url('../fonts/ProximaNova-Bold.ttf') format('truetype');
+	font-weight: bold;
+}
+@font-face {
+	font-family: Proxima;
+	src: url('../fonts/ProximaNova-Light.woff') format('woff'),
+		 url('../fonts/ProximaNova-Light.ttf') format('truetype');
+	font-weight: 300;
+}
+body {
+	font-size: 14px;
+	font-family: Roboto;
+	background-color: #fcfcfc;;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+/* ===============HEADER=============== 
+=======================================*/
+
+.page-header, .page-footer {
+	min-height: 67px;
+	width: 100%;
+	background-color: #080808dc;
+	font-size: 16px;
+}
+.page-header{
+	display: flex;
+	align-items: center;
+}
+.wrapper {
+	width: 1180px;
+	margin: 0 auto;
+}
+.page-header .wrapper, .page-footer .wrapper {
+	display: flex; /*to place it horizontally*/
+	justify-content: space-around;
+	align-items: center;
+}
+nav ul {
+	display: flex; /*to place ul(s) horizontally*/
+}
+nav ul li a:hover {
+	color: #4d4d4d;
+}
+.page-header nav a {
+	font-family: Proxima;
+	color: rgb(236, 221, 221);
+	text-transform: uppercase;
+	text-decoration: none;
+	justify-content: space-between;
+	padding: 0 35px;
+}
+.toggle-line{
+	display: block; /* default value for span is inline, in which the toggle line will not show up, i.e. height and width can be applied only in display: block*/
+	width: 100%;
+	height: 7px;
+	background-color: rgb(236, 221, 221);
+	border-radius: 4px;
+	margin: 2px 0; /*distance between toggle-line*/
+}
+.nav-toggle{
+	width: 50px;
+	background: none;
+	border: none;
+	display: none;
+}
+.header-logo img{
+	width:150px;
+	height:40px;
+}
+/* ===============MAIN===============
+====================================*/
+
+.main>.wrapper {
+	display: flex;
+}
+main{
+	width: 77%;
+}
+.right-sidebar{
+	width: 23%;
+}
+img{
+	width: 100%;
+}
+article{
+	display: flex;
+	margin-bottom: 40px;
+}
+h2{
+	font-family: Proxima;
+	font-weight: bold;
+	font-size: 24px;
+	margin: 40px 0 15px;
+}
+article h3{
+	font-family: Proxima;
+	font-weight: 300;
+	font-size: 27px;
+}
+.article-left{
+	width: 30%;
+}
+.article-left img{
+	border-radius: 3px ;
+}
+.article-right{
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	padding-left: 25px;
+	justify-content: space-between; /*because earlier to align content vertically we added flex-direction:column */
+}
+.article-right .meta{
+	margin: 16px 0;
+}
+.meta{
+	font-family: Roboto;
+	font-weight: 300;
+	color: #999;
+	font-size: 13px;
+}
+.meta span::after{
+	display: inline-block;
+	content: "|";
+	font-size: 13px;
+	margin-left: 2px;
+}
+.meta span:last-child::after{
+	display: none;
+}
+.category{
+	color: #e70c0c;
+}
+.description{
+	color: #554;
+	font-size: 16px;
+	font-family: Proxima;
+	font-weight: 300;
+	line-height: 1.5;
+}
+.description::after{
+	content: '>';
+	color: #e70c0c;
+}
+.additional{
+	color: #999;
+	font-family: Roboto;
+	font-size: 13px;
+	font-weight: 300;
+	margin-top: 15px;
+}
+.views::before{
+	content: '\f06e'; /*unicode from https://fontawesome.com/*/
+	font-family: 'Font Awesome 5 Free';
+	font-size: 13px;
+	margin-right: 10px;
+}
+.views::after{
+	content: "|";
+	margin-left: 10px;
+}
+.comments{
+	color: #e70c0c;
+}
+.comments::before{
+	content: '\f075';
+	color: #999;
+	font-family: 'Font Awesome 5 Free';
+	font-size: 13px;
+	margin-right: 10px;
+}
+.more{
+	display: block;
+	margin: 0 auto; /*to center the button on the page*/
+	width: 170px;
+	height: 42px;
+	background: transparent;
+	color: rgb(21, 22, 21);
+	font-family: Roboto;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	border: 1px solid #da1313;
+	border-radius: 5px;
+	text-align: center;
+}
+.more:hover {
+	background: #8a8787;
+	border: none;
+}
+
+/* ===============ASIDE===============
+====================================== */
+
+aside.right-sidebar{
+	padding-top: 78px;
+	padding-left: 65px;
+}
+.search-box{
+	width: 100%;
+	position: relative;
+}
+.search-box label{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 100;
+}
+.search-box input{
+	width: 100%;
+	border-radius: 10px;
+	padding: 8px 10px 8px 30px;
+	outline: none;
+	border: 1px solid #e5e5e5;
+	font-family: Roboto;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+.calendar-widget{
+	border: 1px solid #e5e5e5;
+	width: 100%;
+	border-radius: 10px;
+	margin-top: 40px;
+}
+.calendar-widget .calendar-top{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 38px;
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+}
+.calendar-prev, .calendar-next{
+	color: #cfcece;
+}
+.calendar-widget table{
+	width: calc(100% + 4px);
+	margin-left: -2px;
+	border-radius: 0 0 10px 10px;
+}
+.calendar-widget table th{
+	height: 26px;
+	background-color: #e7e7e7;
+	color: #888;
+	text-align: center;
+	vertical-align: middle;
+}
+.calendar-widget table td{
+	height: 33px;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #e5e5e5;
+	color: #e5e5e5;
+}
+.calendar-widget tr:last-child td:first-child{
+	border-radius: 0 0 0 10px;
+}
+.calendar-widget tr:last-child td:last-child{
+	border-radius: 0 0 10px 0;
+}
+.calendar-widget .current-month{
+	color: #4d4d4d; 
+}
+.calendar-widget .current-date{
+	background-color: #f7c61d;
+	color: white;
+}
+.popular-now article {
+	flex-direction: column;
+	margin-bottom: 25px;
+}
+.popular-now h2{
+	font-family: Proxima;
+	font-size: 18px;
+	font-weight: bold;
+	display: flex;
+	white-space: nowrap; /*to make line (after Popular news) and Popular now on the same level*/
+	align-items: center;
+}
+.popular-now h2::after {
+	display: block;
+	width: 100%;
+	height: 1px;
+	border-top: 1px solid #e5e5e5;
+	content: '.';
+	font-size: 0;
+	margin-left: 20px;
+}
+.popular-now h3{
+	font-size: 16px;
+	font-family: Roboto;
+	line-height: 1.2;
+	margin-top: 10px;
+}
+.popular-now a:hover{
+	color: #e70c0c;
+}
+
+/* ===============FOOTER===============
+======================================= */
+
+.page-footer{
+	margin: 100px 0 0;
+}
+.page-footer>.wrapper> *{
+	width: 33.33%;
+}
+.copy{
+	font-family: Proxima;
+	font-weight: 300; /*light*/
+	font-size: 14px;
+	color: #eeece3;
+}
+.socials{
+	display: flex;
+	justify-content: flex-end;
+}
+.socials a{
+	display: block; /*because links (a) are displayed as inline by default*/
+	width: 45px;
+	height: 45px;
+	background-color: #fff;
+	border-radius: 50%;
+	color: #779479;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.footer-nav a{
+	display: flex;
+	justify-content: space-between;
+	text-decoration: none;
+	color: #000;
+	padding: 0 15px;
+	font-family: Roboto;
+	text-align: center;
+}
+/* ===============MEDIA QUERIES - TABLET===============
+======================================================= */
+@media (max-width: 75em) { /*1200 px/16 px*/
+	.page-header{
+		position: relative;
+	}
+	.nav-toggle{
+		display: block;
+		order: 1;
+	}
+	nav{
+		position: absolute; /*to bring the nav down when hamburger button is pressed*/
+		top: 100%;
+		z-index: 10;
+	}
+	nav ul{
+		flex-direction: column;
+	}
+	.left-nav, .right-nav{ /*to hide when in tablet/mobile version */
+		display: none;
+	}
+	.open .left-nav, .open .right-nav{ /*to display them in blocks in tablet/mobile version*/
+		display: block;
+	}
+	.left-nav{
+		left: 15px;
+	}
+	.right-nav{
+		right: 15px;
+	}
+	nav li{
+		margin: 15px 0;
+	}
+	.open::after{
+		content: '';
+		display: block;
+		width: 100%;
+		height: 135px;
+		background-color: #779479;
+		color: black;
+		position: absolute;
+		top: 100%;
+	}
+	.page-header .wrapper{ /*to make logo and hamburger in opposite sides*/
+		justify-content: space-between;
+	}
+	.wrapper{
+		width: 100%;
+		padding: 0 15px;
+		box-sizing: border-box;
+	}
+	.main>.wrapper{
+		flex-direction: column;
+	}
+	main, .right-sidebar{
+		width: 100%;
+	}
+	article{ /*which includes article-left and article-right*/
+		flex-direction: column;
+		width: calc(50% - 15px);
+		margin-right: 15px;
+	}
+	.article-left{ /*which is images*/
+		width: 100%;
+		margin-bottom: 15px;
+	}
+	.article-right{ /*which is texts*/
+		padding-left: 0;
+		width: 100%;
+	}
+	.articles{ /*which includes all "article"*/
+		display: flex;
+		flex-wrap: wrap;
+	}
+	aside.right-sidebar{
+		padding-left: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	}
+	.calendar-widget{
+		width: calc(50% - 15px);
+		margin-right: 15px;
+		box-sizing: border-box;
+	}
+	.popular-now{
+		width: 50%;
+	}
+	.popular-now article{
+		width: 100%;
+	}
+	.page-footer .wrapper{
+		flex-wrap: wrap;
+		padding: 20px 15px;
+	}
+	.page-footer>.wrapper>.copy{
+		width: 100%;
+		order: 1;
+	}
+	.page-footer>.wrapper>.footer-nav{
+		width: 70%;
+		position: static; /*to disable footer nav moving*/
+	}
+	.footer-nav ul{
+		flex-direction: row;
+	}
+	.page-footer>.wrapper>.socials{
+		width: 30%;
+	}
+}
+/* ===============MEDIA QUERIES - MOBILE===============
+======================================================= */
+@media (max-width: 36.125em) { /*578/16*/
+		article{ /*which includes article-left and article-right*/
+		width: 100%;
+	} 		
+	.calendar-widget, .popular-now{
+		width: 100%;
+	}
+	.page-footer>.wrapper>.footer-nav{
+		width: 100%;
+	}
+	.page-footer>.wrapper>.socials{
+		width: 100%;
+		justify-content: flex-start;
+		margin: 15px 0;
+	}
+	.footer-nav a{
+		padding: 0;
+	}
+	.footer-nav ul a{
+		flex-direction: row;
+		padding-left: 15px;
+		box-sizing: border-box;
+	}
+}
